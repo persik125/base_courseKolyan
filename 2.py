@@ -1,6 +1,16 @@
 import matplotlib.pyplot as plt
-def parabola(x0,xk,n,a,b,c):
-    x = [i for i in range(x0,xk,(xk-x0)/n)]
-    y = [a*j**2 + b*j + c for j in x]
-    plt.plot(x,y) 
-    plt.savefig('myparabola.png') # сохранение графика
+import numpy as np
+
+a = 1
+b = 1
+c = -6
+x0 = -5
+xk = 5
+n = 100
+xsd = [x for x in np.linspace(x0,0,n)]
+xsp = [x for x in np.linspace(0,xk,n)]
+yd = [1/i for i in xsd]
+yp = [1/i for i in xsp]
+plt.plot(xsd,yd) 
+plt.plot(xsp,yp) 
+plt.savefig('mygiperbola.png') # сохранение графика
