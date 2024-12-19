@@ -20,9 +20,11 @@ def animate(i):
     ball.set_data([coords[i][0]],[coords[i][1]])
     ball_line.set_data(coords[:i,0],coords[:i,1])
     return ball, ball_line
-edge = 3
+edge = 10
 plt.axis('equal')
 ax.set_xlim(-edge,edge)
 ax.set_ylim(-edge,edge)
 
-ani = FuncAnimation(fig,animate,frames = frames, interval = 30)
+	
+ani = FuncAnimation(fig,animate,frames=frames,interval=50) # по умолчанию 200 милисекунд
+ani.save('animation_1.gif', writer="pillow")
